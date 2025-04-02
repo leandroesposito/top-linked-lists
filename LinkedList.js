@@ -137,8 +137,13 @@ export default class LinkedList {
 
     if (curr) {
       prev.next = curr.next;
+      this._size--;
     } else {
       prev.next = curr;
+    }
+
+    if (this._tail === curr) {
+      this._tail = prev;
     }
 
     return curr;
